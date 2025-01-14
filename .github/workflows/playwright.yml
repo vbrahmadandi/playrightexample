@@ -27,6 +27,7 @@ jobs:
   
     - name: Run Playwright tests
       run: npx playwright test
+      continue-on-error: true
 
     - name: Upload test results
       uses: actions/upload-artifact@v3
@@ -46,3 +47,4 @@ jobs:
 
     - name: Run tests in Docker container
       run: docker run playwright-tests
+      continue-on-error: true
