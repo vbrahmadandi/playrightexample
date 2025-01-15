@@ -8,7 +8,9 @@ module.exports = defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { browserName: 'chromium' }, // Use Chromium
+      //use: { browserName: 'chromium' }, // Use Chromium
+      use: { ...devices['Desktop Chrome'] },
+      headless: true
     }
     /*{
       name: 'firefox',
