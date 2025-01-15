@@ -9,14 +9,14 @@ module.exports = defineConfig({
     {
       name: 'chromium',
       use: { browserName: 'chromium' }, // Use Chromium
-    },
-    {
+    }
+    /*{
       name: 'firefox',
       use: { browserName: 'firefox' }, // Use Firefox
     },
     {
       name: 'webkit',
       use: { browserName: 'webkit' }, // Use WebKit
-    },
+    },*/
   ],
 });
