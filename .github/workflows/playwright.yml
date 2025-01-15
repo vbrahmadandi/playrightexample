@@ -35,16 +35,4 @@ jobs:
         name: test-results
         path: test-results/ # Path to the directory containing videos  
 
-  docker-test:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Build Docker image
-      run: docker build -t playwright-tests .
-
-    - name: Run tests in Docker container
-      run: docker run playwright-tests
-      continue-on-error: true
+  
