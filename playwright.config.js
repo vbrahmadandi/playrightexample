@@ -7,7 +7,7 @@ module.exports = defineConfig({
     video: 'on', // Options: 'on', 'retain-on-failure', 'off', 'on-first-retry'
   },
   outputDir: 'test-results/', // Directory where videos and traces will be saved
-  reporter: [['html', { outputFolder: 'html-report' }]],
+  reporter: ['html'],
 
   timeout: 60000, // Set the default timeout to 60 seconds (60000 ms)
   projects: [
