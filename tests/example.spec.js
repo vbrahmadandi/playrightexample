@@ -20,7 +20,7 @@ const { test, expect } = require('@playwright/test');
 });*/
 
 
-test('Print OS name, browser name, and version', async ({ browserName, browser }) => {
+/*test('Print OS name, browser name, and version', async ({ browserName, browser }) => {
   // Get the OS name
   const osName = process.platform; // 'win32', 'darwin', or 'linux'
 
@@ -31,7 +31,7 @@ test('Print OS name, browser name, and version', async ({ browserName, browser }
   console.log(`Operating System: ${osName}`);
   console.log(`Browser Name: ${browserName}`);
   console.log(`Browser Version: ${browserVersion}`);
-});
+});*/
 
 test('verify content', async ({page }) => {
   await page.goto('https://moe.alefed.com/');
