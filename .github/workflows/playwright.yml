@@ -45,7 +45,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
           branch: gh-pages  # The branch to push the report to
-          folder: playwright-report  # The folder to push (this is where Playwright report is generated)
+          folder: playwright-html-report  # The folder to push (this is where Playwright report is generated)
           token: ${{ secrets.GITHUB_TOKEN }}       
 
   
