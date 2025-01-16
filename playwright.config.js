@@ -12,7 +12,7 @@ module.exports = defineConfig({
   timeout: 60000, // Set the default timeout to 60 seconds (60000 ms)
   projects: [
     {
-      name: 'chromium',
+      name: 'chrome',
       use: { browserName: 'chromium' }, // Use Chromium
       //use: { ...devices['Desktop Chrome'] },
       headless: true
