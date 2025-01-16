@@ -16,7 +16,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     environment:
-     name: github-pages
+     name: github-pages-v
 
     steps:
     - name: Checkout repository
