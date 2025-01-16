@@ -7,11 +7,15 @@ module.exports = defineConfig({
     video: 'on', // Options: 'on', 'retain-on-failure', 'off', 'on-first-retry'
   },
   outputDir: 'test-results/', // Directory where videos and traces will be saved
+  reporter: [
+    ['html']
+  ],
+  timeout: 60000, // Set the default timeout to 60 seconds (60000 ms)
   projects: [
     {
       name: 'chromium',
-      //use: { browserName: 'firefox' }, // Use Chromium
-      use: { ...devices['Desktop Chrome'] },
+      use: { browserName: 'Chromium' }, // Use Chromium
+      //use: { ...devices['Desktop Chrome'] },
       headless: true
     }
     /*{
