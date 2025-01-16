@@ -13,11 +13,12 @@ module.exports = defineConfig({
   projects: [
     {
       name: 'chrome',
-      use: { browserName: 'chromium' }, // Use Chromium
+      //use: { browserName: 'chromium' }, // Use Chromium
       //use: { ...devices['Desktop Chrome'] },
-      headless: true,
-      acceptDownloads: true  // Disable download prompts for headless mode
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
+      //headless: true,
+      //acceptDownloads: true,  // Disable download prompts for headless mode
+      //args: ['--no-sandbox', '--disable-setuid-sandbox']
+      use:{...devices['Desktop Chrome']}
     }
     /*{
       name: 'firefox',
