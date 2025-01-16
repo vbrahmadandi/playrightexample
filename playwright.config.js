@@ -17,7 +17,7 @@ module.exports = defineConfig({
       //use: { ...devices['Desktop Chrome'] },
       headless: true,
       acceptDownloads: true  // Disable download prompts for headless mode
-
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     }
     /*{
       name: 'firefox',
