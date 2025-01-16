@@ -15,7 +15,9 @@ module.exports = defineConfig({
       name: 'chrome',
       use: { browserName: 'chromium' }, // Use Chromium
       //use: { ...devices['Desktop Chrome'] },
-      headless: true
+      headless: true,
+      acceptDownloads: true  // Disable download prompts for headless mode
+
     }
     /*{
       name: 'firefox',
