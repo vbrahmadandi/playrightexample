@@ -41,4 +41,11 @@ jobs:
           name: playwright-html-report
           path: html-report    
 
+    - name: Upload Playwright report to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.1.1
+      with:
+          branch: gh-pages  # The branch to push the report to
+          folder: playwright-report  # The folder to push (this is where Playwright report is generated)
+          token: ${{ secrets.GITHUB_TOKEN }}       
+
   
