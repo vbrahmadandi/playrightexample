@@ -50,7 +50,7 @@ jobs:
       uses: actions/upload-pages-artifact@v2
       if: always()
       with:
-        path: playwright-report/
+        path: playwright-report1/
     - name: Deploy to GitHub Pages
       if: ${{ always() && !cancelled() }}
       uses: actions/deploy-pages@v2       
@@ -93,7 +93,7 @@ jobs:
       uses: actions/upload-pages-artifact@v2
       if: always()
       with:
-          path: playwright-report1/
+          path: playwright-report/
     - name: Deploy to GitHub Pages
       if: ${{ always() && !cancelled() }}
       uses: actions/deploy-pages@v2
