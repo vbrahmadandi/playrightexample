@@ -1,5 +1,7 @@
 const { defineConfig } = require('@playwright/test');
 const { devices } = require('@playwright/test');
+const ENV = process.env.ENV || 'moe';
+
 
 
 module.exports = defineConfig({
@@ -8,8 +10,7 @@ module.exports = defineConfig({
   },
   outputDir: 'test-results/', // Directory where videos and traces will be saved
   reporter: [
-    ['html', { outputFolder: 'playwright-report', open: 'never' }],
-    ['html', { outputFolder: 'playwright-report1', open: 'never' }],
+    ['html', { outputFolder: `playwright/${ENV}`, open: 'never' }],
   ],
   timeout: 60000, // Set the default timeout to 60 seconds (60000 ms)
   projects: [
