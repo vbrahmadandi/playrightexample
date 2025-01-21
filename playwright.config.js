@@ -9,6 +9,7 @@ module.exports = defineConfig({
   outputDir: 'test-results/', // Directory where videos and traces will be saved
   reporter: [
     ['html', { outputFolder: 'playwright-report', open: 'never' }],
+    ['html', { outputFolder: 'playwright-report1', open: 'never' }],
   ],
   timeout: 60000, // Set the default timeout to 60 seconds (60000 ms)
   projects: [
