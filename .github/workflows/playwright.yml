@@ -15,7 +15,8 @@ permissions:
 jobs:
   moe:
     runs-on: ubuntu-latest
-    name: github-pages-moe
+    environment:
+      name: github-pages-moe
 
     steps:
     - name: Checkout repository
@@ -57,7 +58,8 @@ jobs:
 
   demo:
     runs-on: ubuntu-latest
-    name: github-pages-demo
+    environment:
+      name: github-pages-demo
       
     steps:
     - name: Checkout repository
