@@ -61,40 +61,40 @@ jobs:
       
     steps:
     - name: Checkout repository
-        uses: actions/checkout@v3
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
+      uses: actions/setup-node@v3
+      with:
         node-version: '18'
 
     - name: Install dependencies
-        run: npm install
+      run: npm install
 
     - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+      run: npx playwright install --with-deps
   
     - name: Run Playwright tests
-        run: ENV=demo npx playwright test
-        continue-on-error: true    
+      run: ENV=demo npx playwright test
+      continue-on-error: true    
 
     - uses: actions/upload-artifact@v3
-        if: always()
-        with:
+      if: always()
+      with:
           name: playwright-report
           path: playwright-report/
-        retention-days: 3
+          retention-days: 3
     - name: Configure GitHub Pages
-        uses: actions/configure-pages@v3
-        if: always()
+      uses: actions/configure-pages@v3
+      if: always()
     - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v2
-        if: always()
-        with:
+      uses: actions/upload-pages-artifact@v2
+      if: always()
+      with:
           path: playwright-report/
     - name: Deploy to GitHub Pages
-        if: ${{ always() && !cancelled() }}
-        uses: actions/deploy-pages@v2
+      if: ${{ always() && !cancelled() }}
+      uses: actions/deploy-pages@v2
 
     
   
