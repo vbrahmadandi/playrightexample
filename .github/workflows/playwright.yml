@@ -74,4 +74,4 @@ jobs:
         cp -r playwright/${{ matrix.env }}/* "reports/${{ matrix.env }}/"
         git add .
         git commit -m "Deploy ${{ matrix.env }} report to GitHub Pages"
-        git push origin gh-pages --force
+        git push origin gh-pages --force &
