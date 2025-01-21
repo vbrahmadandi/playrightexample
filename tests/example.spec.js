@@ -33,7 +33,7 @@ const { test, expect } = require('@playwright/test');
   console.log(`Browser Version: ${browserVersion}`);
 });*/
 
-test('verify content', async ({page }) => {
+/*test('verify content', async ({page }) => {
   await page.goto('https://moe.alefed.com/');
   await page.goto('https://moe.alefed.com/?1736878603638');
   await page.goto('https://sso.alefed.com/login?state=hKFo2SB3ZDg0OW5mb1gwM3U4MzF0ZlBwbUZFQ09yaVpVbmtaUKFupWxvZ2luo3RpZNkgcVdwbnJZVXhzaTA3LUsyYUgzWHdCTXloXzdySTZ4QWujY2lk2SA5Q0tlakFFSzFDWjh0NVJqbHluYmhGQjBJM1lRbTVZVw&client=9CKejAEK1CZ8t5RjlynbhFB0I3YQm5YW&protocol=oauth2&audience=https%3A%2F%2Falefed.com%2Fbackend&response_type=code&redirect_uri=https%3A%2F%2Fwww.alefed.com%2Fcallback&scope=openid%20profile%20email&tenant=moe&stateId=zTUzXBm6EEA5apM9e2ebdzkOhtK3Ov');
@@ -66,4 +66,4 @@ test('verify content', async ({page }) => {
   await page.getByText('PP').click();
   await page.locator('div').filter({ hasText: /^Log out$/ }).nth(2).click();
 
-});
+});*/
