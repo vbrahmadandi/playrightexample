@@ -7,7 +7,7 @@ on:
   pull_request:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
   actions: read  
@@ -37,30 +37,25 @@ jobs:
     - name: Install Playwright browsers
       run: npx playwright install --with-deps
 
-
-    - name: Ensure report directory exists
-      run: mkdir -p playwright/${{ matrix.env }}   
+    - name: Ensure Report Directory Exists
+      run: mkdir -p playwright/${{ matrix.env }}
 
     - name: Run Playwright tests
       run: ENV=${{ matrix.env }} npx playwright test
       continue-on-error: true
 
-    - uses: actions/upload-artifact@v3
+    - name: Upload Report Artifacts
+      uses: actions/upload-artifact@v3
       if: always()
       with:
         name: playwright-report-${{ matrix.env }}
         path: playwright/${{ matrix.env }}/
         retention-days: 3
 
-    - name: List generated report files
-      run: ls -R playwright/${{ matrix.env }}    
-
     - name: Configure GitHub Pages
       uses: actions/configure-pages@v3
-      if: always()
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-
 
     - name: Upload Pages Artifact
       uses: actions/upload-pages-artifact@v2
@@ -68,18 +63,15 @@ jobs:
       with:
         path: playwright/${{ matrix.env }}/
 
-    - name: Deploy to GitHub Pages
+    - name: Deploy to gh-pages
       if: ${{ always() && !cancelled() }}
-      #uses: actions/deploy-pages@v2
       run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch
-          git checkout -B gh-pages
-          mkdir -p "reports/${{ matrix.env }}"
-          cp -r playwright/${{ matrix.env }}/* "reports/${{ matrix.env }}/"
-          git add .
-          git commit -m "Deploy ${{ matrix.env }} report to GitHub Pages"
-          git push origin gh-pages --force
-  
-  
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git fetch
+        git checkout -B gh-pages
+        mkdir -p "reports/${{ matrix.env }}"
+        cp -r playwright/${{ matrix.env }}/* "reports/${{ matrix.env }}/"
+        git add .
+        git commit -m "Deploy ${{ matrix.env }} report to GitHub Pages"
+        git push origin gh-pages --force
