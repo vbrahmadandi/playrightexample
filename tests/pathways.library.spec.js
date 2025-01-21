@@ -5,7 +5,7 @@ const LoginPage = require('../pages/login');
 const HomePage = require('../pages/teacher/homepage')
 const NavPage = require('../pages/teacher/navsidebar')
 const LibraryPage = require('../pages/teacher/librarypage')
-const env = process.env.ENV || 'moe';
+//const env = process.env.ENV || 'moe';
 const testData = getTestData(env);
 
 test('verify pathways library', async ({page}) => {
