@@ -76,7 +76,8 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git fetch
           git checkout -B gh-pages
-          cp -r playwright/${{ matrix.env }}/* .
+          mkdir -p "reports/${{ matrix.env }}"
+          cp -r playwright/${{ matrix.env }}/* "reports/${{ matrix.env }}/"
           git add .
           git commit -m "Deploy ${{ matrix.env }} report to GitHub Pages"
           git push origin gh-pages --force
