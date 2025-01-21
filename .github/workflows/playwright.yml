@@ -58,6 +58,9 @@ jobs:
     - name: Configure GitHub Pages
       uses: actions/configure-pages@v3
       if: always()
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
 
     - name: Upload Pages Artifact
       uses: actions/upload-pages-artifact@v2
