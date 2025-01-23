@@ -21,6 +21,9 @@ jobs:
     strategy:
       matrix:
         env: [moe, demo]
+    concurrency:
+      group: ${{ github.workflow }}-${{ matrix.env }}
+      cancel-in-progress: false
 
     steps:
     - name: Checkout repository
